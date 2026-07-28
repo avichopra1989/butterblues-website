@@ -92,6 +92,37 @@ const EMAIL = "contact@butterblues.com";
     sections.forEach((s) => spy.observe(s));
   }
 
+  /* ---------- analytics ----------
+     Fires GA4 events for the actions that actually matter to the business:
+     someone tapping a way to reach us, or submitting the enquiry form.
+     Safe to keep even if gtag hasn't loaded (e.g. an ad-blocker) — track()
+     just no-ops silently rather than throwing. */
+  const track = (name, params) => {
+    if (typeof window.gtag === "function") {
+      window.gtag("event", name, params || {});
+    }
+  };
+
+  document.addEventListener("click", (e) => {
+    const el = e.target.closest("a, button");
+    if (!el) return;
+
+    const loc = (el.closest("[data-loc]") || {}).dataset?.loc || "unspecified";
+    const href = el.getAttribute("href") || "";
+
+    if (/^https:\/\/(wa\.me|api\.whatsapp\.com)/.test(href)) {
+      track("contact_click", { method: "whatsapp", link_location: loc });
+    } else if (href.startsWith("tel:")) {
+      track("contact_click", { method: "phone", link_location: loc });
+    } else if (href.startsWith("mailto:")) {
+      track("contact_click", { method: "email", link_location: loc });
+    } else if (/instagram\.com/.test(href)) {
+      track("contact_click", { method: "instagram", link_location: loc });
+    } else if (el.dataset.track) {
+      track(el.dataset.track, { label: el.dataset.label || undefined });
+    }
+  });
+
   /* ---------- enquiry form ---------- */
   const form = $("#enquiry");
   const hint = $("#formHint");
@@ -156,6 +187,8 @@ const EMAIL = "contact@butterblues.com";
     const body = `Hello ButterBlues,\n\nI'd like to enquire about an order.\n\n${summarise(data)}\n\nThank you!`;
     window.location.href = `mailto:${EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
 
+    track("generate_lead", { method: "email", occasion: data.occasion });
+
     hint.textContent = "Your email app should be opening now with everything filled in.";
     hint.style.color = "";
   });
@@ -168,6 +201,8 @@ const EMAIL = "contact@butterblues.com";
 
     const text = `Hi ButterBlues! I'd like to enquire about an order.\n\n${summarise(data)}`;
     window.open(`https://wa.me/${WHATSAPP}?text=${encodeURIComponent(text)}`, "_blank", "noopener");
+
+    track("generate_lead", { method: "whatsapp", occasion: data.occasion });
 
     hint.textContent = "WhatsApp should be opening in a new tab with your details ready to send.";
     hint.style.color = "";

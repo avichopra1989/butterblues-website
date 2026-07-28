@@ -3,6 +3,16 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZB57MJQET0"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-ZB57MJQET0');
+</script>
+
 <title>ButterBlues — Artisanal Home Bakery &amp; Gift Hampers</title>
 <meta name="description" content="ButterBlues is a home bakery run by two sisters. 100% eggless, small-batch cookies, brownies, cakes and celebration bakes, plus curated hampers for Rakshabandhan, Diwali, Christmas, corporate gifting, weddings, baby showers and house parties.">
 <link rel="canonical" href="https://butterblues.com/">
@@ -164,14 +174,14 @@
     <div class="hero-copy">
       <p class="eyebrow">Home kitchen · 100% eggless · Baked to order</p>
       <h1>Baked at home.<br><em>Boxed</em> for the occasion.</h1>
-      <p class="lede">Two sisters, one oven, and a short list of things we make properly — cookies, brownies, celebration cakes, and hampers put together for the people you're thanking.</p>
+      <p class="lede">Two sisters, one oven, and a few things made with love — cookies, brownies, celebration cakes, and hampers put together for the people you're thanking.</p>
 
       <div class="hero-actions">
-        <a class="btn btn--gold" href="#hampers">
+        <a class="btn btn--gold" href="#hampers" data-track="cta_click" data-label="see_hampers">
           <svg aria-hidden="true"><use href="#ico-giftbox"></use></svg>
           See the hampers
         </a>
-        <a class="btn btn--outline" id="heroWa" href="https://wa.me/918077002435" target="_blank" rel="noopener">
+        <a class="btn btn--outline" id="heroWa" data-loc="hero" href="https://wa.me/918077002435" target="_blank" rel="noopener">
           <svg aria-hidden="true"><use href="#ico-wa"></use></svg>
           Order on WhatsApp
         </a>
@@ -234,7 +244,7 @@
   <div class="shell">
     <div class="band-head reveal">
       <p class="eyebrow eyebrow--ink">What we bake</p>
-      <h2>A short menu, made properly</h2>
+      <h2>A few things, made with love</h2>
       <p>Everything is baked to order in small batches — and 100% eggless, always — so the list stays deliberately short. Seasonal specials go up on Instagram first.</p>
     </div>
 
@@ -242,14 +252,14 @@
     <div class="cat reveal">
       <div class="cat-head">
         <h3>Cookies &amp; Bars</h3>
-        <span>Boxes of 3, 7, 14 &amp; 21</span>
+        <span>Boxed or sold by weight</span>
       </div>
       <div class="tiles">
         <article class="tile">
           <div class="tile-shot"><img src="assets/img/photos/choco-chip-cookies.jpg" alt="Choco chip cookies cooling on a rack, chocolate chunks visible" loading="lazy" width="1200" height="900"></div>
           <div class="tile-body">
             <h4>Choco Chip Cookies</h4>
-            <p>Nutty browned butter, dark chocolate chunks, a crack of sea salt. Crisp edge, soft middle.</p>
+            <p>Butter, dark chocolate chunks, a crack of sea salt. Crisp edge, soft middle. Boxes of 3, 7, 14 or 21.</p>
             <span class="tile-tag">Bestseller</span>
           </div>
         </article>
@@ -257,7 +267,7 @@
           <div class="tile-shot"><img src="assets/img/photos/brownie-bites.jpg" alt="Fudge brownie bites topped with melted chocolate and toffee crunch" loading="lazy" width="1152" height="864"></div>
           <div class="tile-body">
             <h4>Fudge Brownie Bites</h4>
-            <p>Dense, glossy-topped, barely set in the centre. Bite-sized squares, boxed by the dozen.</p>
+            <p>Dense, glossy-topped, barely set in the centre. Sold by weight.</p>
             <span class="tile-tag">Fan Favourite</span>
           </div>
         </article>
@@ -265,7 +275,7 @@
           <div class="tile-shot"><img src="assets/img/photos/butter-cookies.jpg" alt="Packets of Butter Blues butter cookies with a bakery label" loading="lazy" width="1200" height="899"></div>
           <div class="tile-body">
             <h4>Butter Cookies</h4>
-            <p>Cardamom and semolina shortbread, the way our grandmother made it. Melts on contact.</p>
+            <p>Made with pure butter, the way our grandmother made it. Melts on contact. Sold by weight.</p>
             <span class="tile-tag">Festive Favourite</span>
           </div>
         </article>
@@ -273,7 +283,7 @@
           <div class="tile-shot"><img src="assets/img/photos/almond-cashew-brittle.jpg" alt="Stacked pieces of almond and cashew brittle with chopped nuts" loading="lazy" width="1200" height="899"></div>
           <div class="tile-body">
             <h4>Almond &amp; Cashew Brittle</h4>
-            <p>Slow-cooked jaggery or sugar syrup, snapped into shards thick with whole nuts.</p>
+            <p>Slow-cooked sugar syrup, snapped into shards thick with whole nuts. Sold by weight.</p>
             <span class="tile-tag">Travels Well</span>
           </div>
         </article>
@@ -463,7 +473,7 @@
         <h3>Planning a corporate order?</h3>
         <p>Send us the headcount and the date and we'll come back with two or three box options at different price points, a branding mock-up, and a single invoice with GST. Repeat festive orders get first slot on the calendar.</p>
       </div>
-      <a class="btn btn--gold" href="#contact">Request a quote</a>
+      <a class="btn btn--gold" href="#contact" data-track="cta_click" data-label="request_quote">Request a quote</a>
     </div>
   </div>
 </section>
@@ -516,13 +526,15 @@
     </div>
 
     <div class="reviews-grid reveal">
-      <figure class="review-card"><img src="assets/img/reviews/review-1.jpg" alt="WhatsApp message: I brought half of the stuff home, nanu nani approved and enjoyed all the stuff, dad especially loved the brownie bites and enjoyed it bite by bite, also thank you for the cute freebie cookie, proper melting in mouth" loading="lazy" width="900" height="456"></figure>
       <figure class="review-card"><img src="assets/img/reviews/review-6.jpg" alt="WhatsApp message: I recently got butter cake, Matilda and brownie bites and it was absolutely amazing, cake was soft and rich, even my husband who doesn't usually prefer sweets liked it after one bite, ButterBlues quality and taste genuinely stand out" loading="lazy" width="900" height="1167"></figure>
-      <figure class="review-card"><img src="assets/img/reviews/review-3.jpg" alt="WhatsApp message: The brownie bites are yummyyyy" loading="lazy" width="900" height="187"></figure>
-      <figure class="review-card"><img src="assets/img/reviews/review-7.jpg" alt="WhatsApp message: the whole pack was amazing, with my favourite being brownie bites, butter cookies and choco chip cookies are awesome as well, they are melting in my mouth, even the packaging felt like a royal product, glad to know you deliver in Pune as well" loading="lazy" width="900" height="795"></figure>
-      <figure class="review-card"><img src="assets/img/reviews/review-2.jpg" alt="WhatsApp message: Brownie bites are addictive" loading="lazy" width="900" height="148"></figure>
-      <figure class="review-card"><img src="assets/img/reviews/review-5.jpg" alt="WhatsApp messages: I loved ittt, specially brownie bites" loading="lazy" width="900" height="281"></figure>
       <figure class="review-card"><img src="assets/img/reviews/review-4.jpg" alt="WhatsApp message: Tried the brownie bites, they were yummm" loading="lazy" width="900" height="197"></figure>
+      <figure class="review-card"><img src="assets/img/reviews/review-2.jpg" alt="WhatsApp message: Brownie bites are addictive" loading="lazy" width="900" height="148"></figure>
+      <figure class="review-card"><img src="assets/img/reviews/review-7.jpg" alt="WhatsApp message: the whole pack was amazing, with my favourite being brownie bites, butter cookies and choco chip cookies are awesome as well, they are melting in my mouth, even the packaging felt like a royal product, glad to know you deliver in Pune as well" loading="lazy" width="900" height="795"></figure>
+      <figure class="review-card"><img src="assets/img/reviews/review-1.jpg" alt="WhatsApp message: I brought half of the stuff home, nanu nani approved and enjoyed all the stuff, dad especially loved the brownie bites and enjoyed it bite by bite, also thank you for the cute freebie cookie, proper melting in mouth" loading="lazy" width="900" height="456"></figure>
+      <figure class="review-card"><img src="assets/img/reviews/review-3.jpg" alt="WhatsApp message: The brownie bites are yummyyyy" loading="lazy" width="900" height="187"></figure>
+      <figure class="review-card"><img src="assets/img/reviews/review-9.jpg" alt="WhatsApp message: Hello, thanks for delivering on such short notice, my brother loved the cookies to an extent he cheated his gym diet for them, I loved them too, you are good at it, maza agya" loading="lazy" width="900" height="685"></figure>
+      <figure class="review-card"><img src="assets/img/reviews/review-8.jpg" alt="WhatsApp message: Hey, I really appreciate the effort, the cake was super tasty and beautiful too, we almost finished both cakes, they were that delicious, thank you" loading="lazy" width="900" height="615"></figure>
+      <figure class="review-card"><img src="assets/img/reviews/review-5.jpg" alt="WhatsApp messages: I loved ittt, specially brownie bites" loading="lazy" width="900" height="281"></figure>
     </div>
 
     <p class="reviews-note">Shared with permission from customers on WhatsApp.</p>
@@ -564,7 +576,7 @@
       <p class="contact-lede">Reach us however suits you. WhatsApp is quickest — we usually reply the same day, between 9am and 8pm.</p>
       <p class="contact-note">Same-day delivery in Gurgaon; up to 7 days to Delhi NCR and select metro cities.</p>
 
-      <ul class="channels">
+      <ul class="channels" data-loc="contact_section">
         <li>
           <a href="https://wa.me/918077002435?text=Hi%20ButterBlues!%20I%27d%20like%20to%20place%20an%20order." target="_blank" rel="noopener">
             <svg aria-hidden="true"><use href="#ico-wa"></use></svg>
@@ -684,7 +696,7 @@
     <div class="footer-top">
       <img src="assets/img/logo-mark.png" alt="ButterBlues" width="74" height="74">
 
-      <ul class="footer-links">
+      <ul class="footer-links" data-loc="footer">
         <li><a href="#menu">Menu</a></li>
         <li><a href="#hampers">Hampers</a></li>
         <li><a href="#ordering">Ordering</a></li>
@@ -693,7 +705,7 @@
         <li><a href="mailto:contact@butterblues.com">Email</a></li>
       </ul>
 
-      <div class="socials">
+      <div class="socials" data-loc="footer">
         <a href="https://instagram.com/butterblues1102" target="_blank" rel="noopener" aria-label="ButterBlues on Instagram">
           <svg aria-hidden="true"><use href="#ico-ig"></use></svg>
         </a>
@@ -714,7 +726,7 @@
   </div>
 </footer>
 
-<a class="wa-float" id="waFloat" href="https://wa.me/918077002435?text=Hi%20ButterBlues!%20I%27d%20like%20to%20place%20an%20order." target="_blank" rel="noopener" aria-label="Order on WhatsApp">
+<a class="wa-float" id="waFloat" data-loc="floating" href="https://wa.me/918077002435?text=Hi%20ButterBlues!%20I%27d%20like%20to%20place%20an%20order." target="_blank" rel="noopener" aria-label="Order on WhatsApp">
   <svg aria-hidden="true"><use href="#ico-wa"></use></svg>
   <b>WhatsApp us</b>
 </a>

@@ -140,7 +140,28 @@ Phone number and email are already set to `+91-8077002435` and
 `contact@butterblues.com`. If either changes, update them in `index.html` **and**
 at the top of `assets/js/main.js`, where `WHATSAPP` and `EMAIL` are defined.
 
-## 6. Getting a contact@butterblues.com inbox
+## 6. Google Analytics
+
+The site is wired up to GA4 (measurement ID `G-ZB57MJQET0`, in the `<head>` of
+`index.html`). Besides the automatic pageview tracking, a few custom events
+fire so you can see what people actually do on the site, not just that they
+visited:
+
+| Event | Fires when | Useful parameters |
+|---|---|---|
+| `contact_click` | Someone taps WhatsApp, Call, Email, or Instagram anywhere on the page | `method` (whatsapp / phone / email / instagram), `link_location` (hero / contact_section / floating / footer) |
+| `generate_lead` | The enquiry form is submitted (either button) | `method` (email / whatsapp), `occasion` |
+| `cta_click` | "See the hampers" or "Request a quote" is clicked | `label` |
+
+In GA4, these show up under **Reports → Engagement → Events** within a few
+hours (Realtime → Events shows them immediately). If you ever want to see
+which contact method people prefer, or which occasion enquiries come in
+for most, this is where to look — no extra setup needed.
+
+To point the site at a different GA property later, replace both instances
+of `G-ZB57MJQET0` in `index.html` with the new measurement ID.
+
+## 7. Getting a contact@butterblues.com inbox
 
 Buying the domain doesn't give you email. GoDaddy will sell you a mailbox, or you
 can use Zoho Mail's free plan for a custom domain, or Google Workspace if you want
