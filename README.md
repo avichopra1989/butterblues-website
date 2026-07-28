@@ -89,8 +89,9 @@ different sizes still line up. A few notes:
   or the page gets slow on phone data. Free tools: [Squoosh](https://squoosh.app).
 - **`alt` text:** describe what's in the photo. It's what people using screen
   readers hear, and Google reads it too.
-- The same swap works for the **About** section — there's a commented-out example
-  in `index.html` right above the illustration, ready for a photo of the two of you.
+- The **About** section already uses a real photo (`assets/img/photos/sisters.jpg`,
+  4:5 portrait). Swap that file, or edit the `<img src="...">` in the `about-art`
+  block in `index.html`, to update it.
 
 You can mix and match: photos for the bakes you've shot, drawings for the rest.
 

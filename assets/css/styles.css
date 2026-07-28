@@ -480,6 +480,30 @@ p:last-child { margin-bottom: 0; }
 .hamper dt { color: rgba(255, 255, 255, 0.5); }
 .hamper dd { margin: 0; color: var(--wheat); }
 
+.hamper-gallery { margin-top: clamp(3rem, 5vw, 4.5rem); }
+.gallery-label {
+  text-align: center;
+  font-size: 0.7rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--wheat);
+  margin-bottom: 1.25rem;
+}
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(0.75rem, 1.5vw, 1.1rem);
+}
+.gallery-grid img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 4px;
+  transition: transform 0.4s var(--ease);
+}
+.gallery-grid img:hover { transform: scale(1.03); }
+
 .corp {
   margin-top: clamp(3rem, 5vw, 4.5rem);
   display: grid;
@@ -562,13 +586,13 @@ p:last-child { margin-bottom: 0; }
    ========================================================================== */
 .about {
   display: grid;
-  grid-template-columns: 0.85fr 1.15fr;
+  grid-template-columns: 1fr 1.05fr;
   gap: clamp(2rem, 5vw, 4.5rem);
   align-items: center;
 }
 .about-art {
   position: relative;
-  aspect-ratio: 4 / 5;
+  aspect-ratio: 4 / 3;
   background: var(--cobalt);
   display: grid;
   place-items: center;
@@ -847,7 +871,7 @@ p:last-child { margin-bottom: 0; }
   .contact { grid-template-columns: 1fr; }
   .hero-art { order: -1; max-width: 430px; margin-inline: auto; }
   .hero-seal { width: 92px; }
-  .about-art { max-width: 340px; }
+  .about-art { max-width: 420px; margin-inline: auto; }
   .corp { grid-template-columns: 1fr; }
 }
 
