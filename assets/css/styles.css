@@ -491,8 +491,14 @@ p:last-child { margin-bottom: 0; }
 }
 .gallery-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: clamp(0.75rem, 1.5vw, 1.1rem);
+}
+@media (max-width: 1100px) {
+  .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 480px) {
+  .gallery-grid { grid-template-columns: 1fr; }
 }
 .gallery-grid img {
   width: 100%;
@@ -578,6 +584,42 @@ p:last-child { margin-bottom: 0; }
   font-size: 0.68rem;
   letter-spacing: 0.16em;
   text-transform: uppercase;
+  color: var(--ink-soft);
+}
+
+/* ==========================================================================
+   REVIEWS — real WhatsApp screenshots, deliberately not cropped to a grid.
+   CSS columns give a masonry layout so tall and short screenshots both
+   sit naturally without stretching or cropping any text.
+   ========================================================================== */
+.reviews-grid {
+  column-count: 3;
+  column-gap: clamp(1rem, 2vw, 1.5rem);
+}
+.review-card {
+  break-inside: avoid;
+  margin: 0 0 clamp(1rem, 2vw, 1.5rem);
+  background: var(--paper);
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid rgba(234, 205, 151, 0.5);
+  box-shadow: 0 16px 30px -22px rgba(19, 26, 63, 0.35);
+  transition: transform 0.4s var(--ease), box-shadow 0.4s var(--ease);
+}
+.review-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 36px -20px rgba(19, 26, 63, 0.4);
+}
+.review-card img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+}
+.reviews-note {
+  margin-top: clamp(2rem, 3vw, 2.5rem);
+  text-align: center;
+  font-size: 0.85rem;
   color: var(--ink-soft);
 }
 
@@ -873,6 +915,11 @@ p:last-child { margin-bottom: 0; }
   .hero-seal { width: 92px; }
   .about-art { max-width: 420px; margin-inline: auto; }
   .corp { grid-template-columns: 1fr; }
+  .reviews-grid { column-count: 2; }
+}
+
+@media (max-width: 560px) {
+  .reviews-grid { column-count: 1; }
 }
 
 @media (max-width: 780px) {
